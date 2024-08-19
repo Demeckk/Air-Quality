@@ -51,50 +51,46 @@
 			</div>
 		</header>
 
-		<content>
-
-			<div id="window">
+		<div id="window">
+			
+			<div id="window__content">
 				
-				<div id="window__content">
-					
-					<div id="window__img">
-						<img src="views/static/img/system/login.svg" alt="">
-					</div>
+				<div id="window__img">
+					<img src="views/static/img/system/login.svg" alt="">
+				</div>
 
 
-					<div id="window__description">
+				<div id="window__description">
 
-							<h1>Perfil</h1>
+						<h1>Perfil</h1>
 
-							<img src="{{AVATAR_URL}}" alt="">
+						<img src="{{AVATAR_URL}}" alt="">
 
-							<form action="" method="POST">
-								
-								<div id="error_msg">{{MSG_ERROR}}</div>
+						<form action="" method="POST">
+							
+							<div id="error_msg">{{MSG_ERROR}}</div>
 
-								<input type="text" name="first_name" value="{{NAME_USER}}" required>
+							<input type="text" name="first_name" value="{{NAME_USER}}" required>
 
-								<input type="text" name="last_name" value="{{LAST_NAME}}" required>
-								
+							<input type="text" name="last_name" value="{{LAST_NAME}}" required>
+							
 
 
-								<!-- <input type="password" name="txt_password" placeholder="Clave" required> -->
-								<input type="submit" name="btn_guardar" value="Guardar">
+							<!-- <input type="password" name="txt_password" placeholder="Clave" required> -->
+							<input type="submit" name="btn_guardar" value="Guardar">
 
 
 
 
-							</form>
+						</form>
 
-							<button id="btn_leave">Abandonar</button>
-					</div>
-
+						<button id="btn_leave">Abandonar</button>
 				</div>
 
 			</div>
-			
-		</content>
 
+		</div>
+			
 		<footer>
 
 			<div id="author">
