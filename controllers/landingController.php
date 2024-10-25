@@ -1,9 +1,7 @@
 <?php 
 
-	// carga la vista
-	$tpl = new MotorMaster("landing");
+	$tpl = new Tini("landing");
 
-	// imprime la vista en la página
 	$tpl->print();
 
  ?>

@@ -1,68 +1,127 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>AirQuality - Landing</title>
+@extern('header')
 
-	<link rel="stylesheet" href="views/static/css/styles.css">
-</head>
-<body>
-
-
-	<div id="wrapper">
-		
-		<header>
-            <div class="navbar">
-                <div class="title">AirQuality</div>
-                <div class="links">
-                    <a href="landing">Home</a>
-                    <a href="contact">Contact</a>
-                    <a href="login">Login</a>
-                </div>
+    <!-- inicio -->
+    <div class="inicio">
+        <div class="todo">
+            <div class="titulo tipo1">
+                <h1 class="t80 centrar tipo1">Proyecto Colibrí</h1>
+                <a href="https://escuelarobertoarlt.com.ar/" class="black t20">E.E.S.T. N°3</a>
             </div>
-
-
-			<div class="card">
-				<img src="views/static/img/system/plastic_bottle.jpg" alt="Bottle" style="width:100%">
-				<div class="card__container">
-					<h4><b>Botella 1</b></h4> 
-					<p>E.E.S.T N°3</p> 
-				</div>
+            <!-- <img src="img/termo.png"> -->
+        </div>
+    </div>
+    <h2>Implementaciones innovadoras para el medioambiente.</h2>
+    <div class="objicono white">
+		<div class="iconosobj">
+			<div class="icono">
+				<i class="fa-solid fa-recycle"></i>
+				<h2 class="t20 mayuscula tipo1">Reciclar</h2>
+				<p>Ayudamos a disminuir la contaminación provocada por botellas pet. Dándole un mejor futuro al plástico, creando
+					objetos útiles.</p>
 			</div>
-
-		</header>
-
-		<div id="window">
-
-			<div id="window__description">
-
-				<h1 class="welcome">Bienvenido a AirQuality</h1>
-				<div id="container__description">
-					<h3 class="description">Las estaciones que miden la calidad del aire son cruciales para proteger la salud pública y el medio ambiente. Monitorean contaminantes como partículas en suspensión y gases tóxicos, permitiendo identificar fuentes de contaminación y evaluar su impacto. Los datos que recogen ayudan a las autoridades a establecer regulaciones efectivas y a los ciudadanos a tomar decisiones informadas sobre su salud, como evitar actividades al aire libre en días de alta contaminación.</h3>
-				</div>
+			<div class="icono">
+				<i class="grosorl fa-solid fa-lightbulb"></i>
+				<h2 class="t20 mayuscula tipo1 ">Ahorrar</h2>
+				<p>Al hacer techos vivos, ahorramos el consumo de energía. Funcionan como un aislante, disminuyendo el
+					uso de
+					aires acondicionados o estufas. </p>
 			</div>
-			<div id="window__medition">
-				<div id="container__medition">
-					<button class="btn good">Good</button>
-					<button class="btn moderate">Moderate</button>
-					<button class="btn slightlyunhealthy">Slightly Unhealthy</button>
-					<button class="btn unhealthy">Unhealthy</button>
-					<button class="btn veryunhealthy">Very Unhealthy</button>
-					<button class="btn hazardous">Hazardous</button>
-				</div>
+			<div class="icono">
+				<i class="material-icons speed">speed</i>
+				<h2 class="t20 mayuscula tipo1">Agilizar</h2>
+				<p>Los recolectores urbanos, a través de la página de Colibrí podrán ver
+					cuando y donde se encuentra llena una botella de acopio de plástico.</p>
 			</div>
 		</div>
-
-		<footer>
-
-			<div id="footer">
-				<p>@deckeremiliano</p>
-			</div>
-			
-		</footer>
-
 	</div>
-	
-</body>
-</html>
+
+    <!-- que es colibri -->
+    <div class="coli white">
+        <div class="info_QueEs mayuscula">
+            <h2 class="t40">Utilizamos tecnología</h2>
+            <p class="t25">Ayudamos al medioambiente implementando tecnología.</p>
+           <a href="mas/info.html" class="white t15">Más información</a>
+        </div>
+        <img src="views/static/img/esp8266.jpg" alt="botella">
+    </div>
+
+    <div class="info tipo1 white">
+        <div class="card">
+            <div class="card_division">
+                <div class="informacion_de_img centrar">
+                    <h3 class="mayuscula">Contaminación</h3>
+                    <p>Las botellas constituyen un grave factor de contaminación. Si se incinera el plástico, se producen vapores tóxicos que contaminan el medio ambiente. Si se la tira a la basura, acaba en un vertedero y los compuestos pueden tardar siglos en degradarse.</p>
+                </div>
+                    <img src="views/static/img/contaminacion.jpg" alt="botella">
+            </div>
+
+            <div class="card_division reverse">
+
+               
+
+                <div class="informacion_de_img centrar">
+                    <h3 class="mayuscula">Botella de hierro</h3>
+                    <p>Contamos con una botella de acopio de plástico, que tiene un contador. El contador va recargando los datos en esta página para saber un aproximado de botellas plásticas que recibió y recuperar material.</p>
+                </div>
+                <img src="views/static/img/botellaexpo.jpg" alt="botella">
+
+            </div>
+
+            <div class="card_division">
+
+                <div class="informacion_de_img centrar">
+                    <h3 class="mayuscula">Techos verdes</h3>
+                    <p>Con el plástico recuperado, en una termoformadora haremos macetas para realizar techos verdes. Los techos verdes con plantas nativas permiten moderar el exceso de temperatura, y aportan tanto para la conservación de biodiversidad.</p>
+                </div>
+                <img src="views/static/img/techoverde2.jpg" alt="botella">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- <div class="separador"></div> -->
+<div class="vacio">
+</div>
+
+    <div class="proyectos">
+        <h2 class="proyectos-title">Proyectos</h2>
+        <div class="card-row-proyectos">
+            <div class="card-proyectos">
+                    <img src="views/static/img/botellas (3).png">
+                <a href="botellas">
+                    <h3>Contador de botellas</h3>
+                </a>
+                <p>Aplicación que registra y contabiliza la cantidad de botellas recicladas para fomentar hábitos ecológicos.</p>
+            </div>
+            <div class="card-proyectos">
+                    <img src="views/static/img/ciudadaire.jpg">
+                <a href="proyectos.html">
+                    <h3>Calidad del aire</h3>
+                </a>
+                <p>Proyecto que muestra en tiempo real los niveles de contaminación del aire para concienciar sobre el ambiente.</p>
+            </div>
+            <div class="card-proyectos">
+                    <img src="views/static/img/techoverde2.jpg">
+                <a href="proyectos.html">
+                    <h3>Techos verdes</h3>
+                </a>
+                <p>Iniciativa que promueve la instalación de techos verdes en edificios para mejorar la sostenibilidad urbana y reducir el calentamiento.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="nosotros tipo1" id="nosotros">
+        <div class="todo t45">
+            <h2>Nosotros</h2>
+            <div class="cudri_foto">
+                <img src="views/static/img/emiliano.jpg">
+                <img src="views/static/img/emanuel.jpg">
+                <img src="views/static/img/maximo.jpg">
+            </div>
+        </div>
+    </div> 
+
+@extern('footer')

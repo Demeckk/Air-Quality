@@ -1,0 +1,29 @@
+@extern('header')
+
+<!-- Modal para solicitar email -->
+<div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="emailModalLabel">Notificaciones por correo electrónico</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form id="emailForm">
+          <div class="mb-3">
+            <label for="emailInput" class="form-label">Ingrese su correo electrónico personal:</label>
+            <input type="email" class="form-control" id="emailInput" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Suscribirse</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Botón para abrir el modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#emailModal">
+  Recibir notificaciones
+</button>
+
+@extern('footer')

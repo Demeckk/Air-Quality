@@ -1,0 +1,26 @@
+@extern('header')
+
+<div id="app">
+    <button onclick="incrementCount()">Agregar Botella</button>
+    <button onclick="decrementCount()">Quitar Botella</button>
+    <h1>Contador de Botellas</h1>
+    <div class="counter">
+      <h2 id="bottleCount">0</h2>
+    </div>
+    <div class="bottle-animation">
+        <div id="bottle-fill"></div>
+    </div>
+  </div>
+    <div class="statistics">
+        <h2>Estadísticas</h2>
+        <ul id="bottleTypes">
+        <!-- Aquí se mostrará la estadística por tipos -->
+        </ul>
+        <p>Promedio de botellas por día esta semana: <span id="averagePerWeek">0</span></p>
+        <p>Promedio de botellas por día este mes: <span id="averagePerMonth">0</span></p>
+        <p>Promedio de botellas por día este año: <span id="averagePerYear">0</span></p>
+    </div>
+
+  <script src="views/static/js/contador.js"></script>
+
+@extern('footer')

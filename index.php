@@ -1,59 +1,65 @@
 <?php
 
-	// carga el modelos
-	include_once 'models/Users.php';
+	/* index.php funciona como un router, redirecciona al controlador especificado en slug */
 
-	// incluimos el motor de plantillas
-	include_once 'lib/motorMaster/MotorMaster.php';
-
+	// se inicia o se continua con la sesion
 	session_start();
 
-	// Router con auto carga de controladores 
+	/*< se incluyen las variables de entorno*/
+	include_once 'env.php';
 
-	// por defecto seccion es landing
+	/*< se incluyen las librerias para el envio de correo electrónico*/
+	include 'lib/php-mailer/Mailer/src/PHPMailer.php';
+	include 'lib/php-mailer/Mailer/src/SMTP.php';
+	include 'lib/php-mailer/Mailer/src/Exception.php';
+
+	// Carga del motor de plantillas en todos los controladores
+	include_once 'lib/Tini/Tini.php';
+
+	// por defecto se presenta landing
 	$seccion = "landing";
 
-	// si existe slug por GET
-	if($_GET['slug']!=""){
-		// se reemplaza seccion por el valor de slug	
-		$seccion = $_GET['slug'];
+	// Si slug tiene valor
+	if(strlen($_GET['slug'])>0){
+		$seccion = $_GET['slug'];	
 	}
 
-
-
-	// si no existe el archivo del controlador
+	// Se comprueba que exista el controlador
 	if(!file_exists('controllers/'.$seccion.'Controller.php')){
-		// seccion se carga con el controlador de error 404
+		// No existe el controlador entonces lo llevamos al controlador de error
 		$seccion = "error404";
 	}
 
-	$seccion_login = ["panel", "logout", "perfil"];
-	$seccion_anonima = ["landing", "login", "register"];
+	// si esta logueado controladores permitidos
+	$controller_user_connected = ["panel", "perfil", "logout", "abandonar"];
+	// no esta logueado controladores permitidos
+	$controller_user_anonymous = ["landing", "login", "register"];
 
-
-
-	// existe una sesion
-	if(isset($_SESSION['mbcorp'])){
- 		
-		foreach ($seccion_anonima as $key => $value) {
-			if($value==$seccion){
-				$seccion = "panel";
-				break;
-			}
-		}
-
-	}else{ // no existe una sesion
-
-		foreach ($seccion_login as $key => $value) {
-			if($value==$seccion){
-				$seccion = "landing";
-				break;
-			}
-		}
-
+	// Si la sesion esta iniciada
+	if(isset($_SESSION["3901"]['usuario'])){
+		// los controladores de anonimo no estan permitidos
+		$controller_test = $controller_user_anonymous;
+		// por defecto se lleva a panel
+		$default_seccion = "panel";
+	}else{ // sesión no iniciada
+		// los controladores de conectado no estan permitidos
+		$controller_test = $controller_user_connected;
+		// por defecto se lleva a landing
+		$default_seccion = "landing";
 	}
 
-	// carga del controlador
-	include 'controllers/'.$seccion.'Controller.php';
+	// Se analiza cuales controladores estan permitidos
+	foreach ($controller_test as $key => $value) {
+		// si coincide con un controlador que no deberia solicitar 
+	 	if($value == $seccion){
+	 		// se manda al controlador por defecto
+	 		$seccion = $default_seccion;
+	 		break;
+	 	}
+	}
+
+	
+	// Se carga el controlador especificado en seccion
+	include_once 'controllers/'.$seccion.'Controller.php';
 
  ?>
