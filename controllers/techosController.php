@@ -1,6 +1,6 @@
 <?php 
 
-	$tpl = new Tini("botellas");
+	$tpl = new Tini("techos");
 
 	$tpl->print();
 
