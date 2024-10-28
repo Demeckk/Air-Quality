@@ -1,50 +1,71 @@
-/* Estilos para el modal de correo electrónico */
-.modal-content {
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  }
-  
-  .modal-header {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #dee2e6;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-  }
-  
-  .modal-title {
-    color: #333;
-    font-weight: bold;
-  }
-  
-  .modal-body {
-    padding: 20px;
-  }
-  
-  .form-label {
-    font-weight: 600;
-    color: #495057;
-  }
-  
-  .form-control:focus {
-    border-color: #80bdff;
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
-  }
-  
-  /* Estilos para el botón de suscripción */
-  .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    transition: all 0.3s ease;
-  }
-  
-  .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-  }
-  
-  /* Estilos para el botón que abre el modal */
-  .btn[data-bs-toggle="modal"] {
-    margin: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-  }
+.popup {
+  display: none; /* Ocultar el popup por defecto */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: white;
+  border-radius: 1rem;
+  width: 45rem;
+  height: 27rem;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.close {
+  margin-left: auto; /* Empuja el botón hacia la derecha */
+  background: none; /* Elimina el fondo */
+  border: none; /* Elimina el borde */
+  font-size: 3rem; /* Tamaño del ícono */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+}
+
+.email {
+  padding: 6px;
+  font-size: 1.5rem;
+  border-width: 1px;
+  border-color: #CCCCCC;
+  background-color: #FFFFFF;
+  color: #000000;
+  border-style: solid;
+  border-radius: 0px;
+  box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+  text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+}
+.email:focus {
+  outline:none;
+}
+
+.submit {
+	background-color:#07393c;
+	border-radius:28px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:1.2rem;
+	padding:16px 31px;
+	text-decoration:none;
+}
+.submit:hover {
+	background-color:#052e30;
+}
+.submit:active {
+	position:relative;
+	top:1px;
+}
+
+

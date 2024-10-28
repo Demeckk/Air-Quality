@@ -7,38 +7,86 @@
     <meta name="descriction" content="aplicacion de proyecto colibri">
     <link rel="stylesheet" href="views/static/css/styles.css">
     <link rel="stylesheet" href="views/static/css/qs.css">
-	<link rel="stylesheet" href="views/static/css/qs_movile.css">
+    <link rel="stylesheet" href="views/static/css/qs_movile.css">
     <link rel="stylesheet" href="views/static/css/botellas.css">
     <link rel="stylesheet" href="views/static/css/notificame.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!-- es para los logos de google icons  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!--  es para el logito -->
     <title>Colibrí</title>
     <link rel="icon" href="views/static/img/colibsinfondo.png">
 </head>
 
-    <body class="tipo1">
+<body class="tipo1">
 
-        <!-- menu -->
-        <header class="black mayuscula">
-            <link rel="icon" href="views/static/img/colibsinfondo.png">
-        
-    <div class="logo t15 tipo1">     
-           
-        <img src="views/static/img/colibsinfondo.png" width="70px" height="70px">
+    <!-- menu -->
+    <header class="black mayuscula">
+        <div class="logo t15 tipo1">     
+            <img src="views/static/img/colibsinfondo.png" width="70px" height="70px">
             Colibrí
-    </div>
+        </div>
 
         <button id="abrir" class="menu_celu_abrir"><i class="fa-solid fa-bars"></i></button>
 
         <div class="menu t15" id="menu">
-
             <button class="menu_celu_cerrar" id="cerrar"><i class="fa-solid fa-x"></i></button>
             <ul class="lista black">
-                <li class="black"><a href="notificame">Notifícame</a></li>
+                <li class="black"><a href="#" id="notificame">Notifícame</a></li>
+            </ul>
         </div>
     </header>
+
+    <!-- Popup para notificación -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Notifícame</h2>
+            <p class="t20">¡Seras notificado con informacion sobre la cantidad de botellas tiradas y la calidad del aire!</p>
+            <p class="t20">Introduce tu email:</p>
+            <input type="email" class="email" id="email" placeholder="Tu email" required>
+            <button id="submit" class="submit">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const popup = document.getElementById('popup');
+            const notificame = document.getElementById('notificame');
+            const cerrar = document.querySelector('.close');
+            const submit = document.getElementById('submit');
+
+            // Mostrar popup al hacer clic en "Notifícame"
+            notificame.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+                popup.style.display = 'flex'; // Mostrar el popup
+            });
+
+            // Cerrar popup
+            cerrar.addEventListener('click', function () {
+                popup.style.display = 'none'; // Ocultar el popup
+            });
+
+            // Enviar email (puedes agregar lógica aquí)
+            submit.addEventListener('click', function () {
+                const email = document.getElementById('email').value;
+                if (email) {
+                    alert('Email enviado: ' + email); // Aquí podrías implementar la lógica para enviar el email
+                    popup.style.display = 'none'; // Cerrar el popup
+                } else {
+                    alert('Por favor, introduce un email válido.');
+                }
+            });
+
+            // Cerrar el popup al hacer clic fuera de él
+            window.addEventListener('click', function (event) {
+                if (event.target === popup) {
+                    popup.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
